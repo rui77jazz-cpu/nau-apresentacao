@@ -1,0 +1,79 @@
+NAU · Cantigas do Mar — página de apresentação
+==============================================
+
+CONTEÚDO DESTA PASTA
+  index.html                      a página
+  media/nau-cais.jpg              imagem de capa (cais ao pôr do sol)
+  media/nau-grupo.jpg             foto do grupo em Leça do Balio
+  media/nau-video.mp4             vídeo ao vivo (15 MB)
+  media/nau-video-poster.jpg      imagem de capa do vídeo
+  media/nau-stage-plot.jpg        desenho de palco (na ficha técnica)
+  NAU-Dossier-Apresentacao.pdf    dossier completo, ligado no fim da ficha técnica
+
+
+VER ANTES DE PUBLICAR
+  Faz duplo clique no index.html. Tem de estar na mesma pasta que a media/
+  e o PDF, senão a foto e o vídeo não aparecem.
+
+
+PUBLICAR NO GITHUB PAGES — PASSO A PASSO
+----------------------------------------
+ 1. Descompacta o nau-apresentacao.zip para uma pasta no computador.
+
+ 2. Vai a github.com e entra na tua conta (rui77jazz-cpu).
+
+ 3. Canto superior direito: botão "+" -> New repository.
+
+ 4. Repository name:  nau-apresentacao
+    Visibilidade:     Public   (obrigatório para o Pages funcionar)
+    NÃO marques "Add a README file".
+    Carrega em Create repository.
+
+ 5. Na página que aparece, clica em "uploading an existing file"
+    (link azul no meio do texto).
+
+ 6. Arrasta para a caixa:
+       index.html
+       LEIA-ME.txt
+       NAU-Dossier-Apresentacao.pdf
+       a pasta media/ inteira
+    O GitHub aceita pastas arrastadas e mantém a estrutura.
+    Espera até todos os ficheiros aparecerem listados — o vídeo tem 15 MB
+    e demora um pouco.
+
+ 7. Em baixo: Commit changes.
+
+ 8. Separador Settings (no topo do repositório) -> Pages (menu da esquerda).
+
+ 9. Em "Build and deployment":
+       Source: Deploy from a branch
+       Branch: main    /  (root)
+    Carrega em Save.
+
+10. Espera 1 a 2 minutos e recarrega a página. Aparece em cima o endereço:
+       https://rui77jazz-cpu.github.io/nau-apresentacao
+
+11. Abre o endereço e confirma que a foto, o vídeo e o link do PDF funcionam.
+
+
+ATUALIZAR DEPOIS
+  Para trocar um ficheiro: entra no repositório, clica no ficheiro,
+  no ícone do lápis (ou em "Upload files" para substituir), e Commit changes.
+  O site atualiza sozinho ao fim de 1 a 2 minutos.
+  Se não vires a alteração, faz Ctrl+F5 no browser.
+
+
+ALTERAÇÕES MAIS PROVÁVEIS NO index.html
+  - Cachê: o valor NÃO está no site nem no PDF público. Aparece só no
+    ficheiro NAU-Dossier-com-cache.docx, para enviares por email.
+    A linha do site diz "sob consulta" e começa por  <p class="terms">
+  - Duração: procura por  50–60 min
+  - Contactos: procura por  cdanielabr
+  - Trocar a foto: substitui media/nau-grupo.jpg mantendo o mesmo nome.
+  - Trocar o vídeo: substitui media/nau-video.mp4 e gera novo poster,
+    ou apaga o atributo poster="..." da etiqueta <video>.
+
+
+GUARDAR EM PDF
+  Ctrl+P no browser. A barra de navegação e o vídeo são omitidos e todas
+  as secções da ficha técnica abrem automaticamente.
