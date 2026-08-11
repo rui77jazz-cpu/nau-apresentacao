@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAU · Cantigas do Mar — Apresentação</title>
+<meta name="description" content="NAU é um quarteto dedicado às cantigas do mar: cantos de trabalho, romances tradicionais e canções de autor. Biografia, vídeo, repertório e ficha técnica.">
+<meta property="og:title" content="NAU · Cantigas do Mar">
+<meta property="og:description" content="Quarteto dedicado às cantigas do mar. Concerto de 50 a 60 minutos.">
+<meta property="og:image" content="media/nau-cais.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0d1b2a;
+  --navy:#13314e;
+  --sea:#2f6f8f;
+  --brass:#b6863f;
+  --brass-soft:#e7d6b4;
+  --parchment:#f5efe3;
+  --parchment-2:#efe7d6;
+  --paper:#fbf7ee;
+  --muted:#6c6353;
+  --line:#d9cdb4;
+
+  --display:'Cormorant Garamond',Georgia,serif;
+  --body:'Spectral',Georgia,serif;
+
+  --maxw:1080px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  font-family:var(--body);
+  font-weight:400;
+  color:var(--ink);
+  background:var(--parchment);
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+img,video{max-width:100%;display:block;}
+a{color:var(--navy);text-decoration-color:var(--line);text-underline-offset:3px;}
+a:hover{color:var(--brass);}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px;}
+
+/* ---------- Barra de navegação ---------- */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(13,27,42,.94);
+  backdrop-filter:saturate(140%) blur(6px);
+  border-bottom:1px solid rgba(230,214,180,.18);
+}
+.topbar-in{
+  max-width:var(--maxw);margin:0 auto;padding:10px 22px;
+  display:flex;align-items:center;gap:22px;justify-content:space-between;
+}
+.brandmark{
+  font-family:var(--display);font-size:21px;font-weight:600;letter-spacing:.34em;
+  color:var(--parchment);text-decoration:none;white-space:nowrap;
+}
+.brandmark span{color:var(--brass-soft);letter-spacing:0;margin-right:.5em;}
+.topnav{display:flex;gap:20px;flex-wrap:wrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.topnav::-webkit-scrollbar{display:none;}
+.topnav a{
+  color:#c8d4e4;text-decoration:none;font-size:13.5px;
+  letter-spacing:.14em;text-transform:uppercase;
+}
+.topnav a:hover{color:var(--brass-soft);}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:min(92vh,780px);display:flex;align-items:flex-end;overflow:hidden;}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 46%;}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(180deg,rgba(13,27,42,.62) 0%,rgba(13,27,42,.18) 34%,rgba(13,27,42,.80) 78%,rgba(13,27,42,.96) 100%);
+}
+.hero-in{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding:0 22px 74px;width:100%;text-align:center;}
+.anchor{color:var(--brass-soft);font-size:24px;letter-spacing:.4em;opacity:.9;}
+.hero h1{
+  font-family:var(--display);font-weight:500;
+  font-size:clamp(72px,17vw,188px);line-height:.92;
+  letter-spacing:.16em;margin:.06em 0 0;color:var(--paper);
+  text-indent:.16em;
+}
+.hero .tagline{
+  font-family:var(--display);font-style:italic;font-weight:400;
+  font-size:clamp(26px,5.2vw,44px);color:var(--brass-soft);margin:.1em 0 .35em;
+}
+.hero .place{
+  font-size:12.5px;letter-spacing:.36em;text-transform:uppercase;color:#c8d4e4;margin:0 0 26px;
+}
+.hero .lede{
+  max-width:640px;margin:0 auto;color:#e8eaf0;font-size:clamp(16px,2.2vw,18.5px);font-weight:300;
+}
+.wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:44px;z-index:3;}
+
+/* ---------- Estrutura das secções ---------- */
+.section{max-width:var(--maxw);margin:0 auto;padding:74px 22px;}
+section[id],header[id]{scroll-margin-top:72px;}
+.section + .section{border-top:1px solid var(--line);}
+.eyebrow{
+  font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass);
+  display:flex;align-items:center;gap:14px;margin:0 0 14px;
+}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--line);}
+h2.title{
+  font-family:var(--display);font-weight:500;font-size:clamp(34px,5.4vw,52px);
+  line-height:1.08;margin:0 0 22px;color:var(--navy);letter-spacing:.01em;
+}
+h3.sub{
+  font-family:var(--body);font-weight:600;font-size:17px;color:var(--navy);
+  margin:30px 0 10px;letter-spacing:.01em;
+}
+p{margin:0 0 16px;}
+.lead{font-size:clamp(18px,2.6vw,21px);font-weight:300;color:#22303f;}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:34px;}
+@media(max-width:760px){.cols{grid-template-columns:1fr;gap:0;}}
+
+.shot{margin:0 0 26px;}
+.shot img{width:100%;height:auto;border:1px solid var(--line);}
+.shot figcaption{font-size:13.5px;color:var(--muted);font-style:italic;margin-top:8px;}
+
+/* ---------- Formação ---------- */
+.crew{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+.crew li{background:var(--paper);padding:24px 22px;}
+.crew .name{font-family:var(--display);font-size:27px;font-weight:600;color:var(--navy);line-height:1.15;}
+.crew .inst{font-size:14.5px;letter-spacing:.06em;color:var(--muted);margin-top:5px;}
+@media(max-width:620px){.crew{grid-template-columns:1fr;}}
+
+/* ---------- Vídeo ---------- */
+.stage{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:40px;align-items:start;}
+@media(max-width:760px){.stage{grid-template-columns:1fr;gap:26px;}}
+.frame{
+  position:relative;padding:12px;background:var(--navy);
+  box-shadow:0 18px 40px -24px rgba(13,27,42,.7);
+}
+.frame video{width:100%;height:auto;background:#000;}
+.frame::before,.frame::after{
+  content:"";position:absolute;width:12px;height:12px;border:1px solid var(--brass);
+}
+.frame::before{top:4px;left:4px;border-right:0;border-bottom:0;}
+.frame::after{bottom:4px;right:4px;border-left:0;border-top:0;}
+.caption{font-size:13.5px;color:var(--muted);font-style:italic;margin-top:10px;}
+
+/* ---------- Repertório ---------- */
+.repertoire{list-style:none;padding:0;margin:0;columns:2;column-gap:40px;}
+.repertoire li{
+  break-inside:avoid;padding:11px 0;border-bottom:1px dotted var(--line);
+  font-size:16.5px;
+}
+.repertoire .src{display:block;font-size:13px;color:var(--muted);font-style:italic;}
+@media(max-width:620px){.repertoire{columns:1;}}
+
+/* ---------- Ficha rápida ---------- */
+.facts{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+.facts li{background:var(--paper);padding:20px 18px;}
+.facts .k{display:block;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);}
+.facts .v{display:block;font-family:var(--display);font-size:24px;color:var(--navy);margin-top:6px;line-height:1.2;}
+.facts .v small{font-family:var(--body);font-size:14px;color:var(--muted);display:block;letter-spacing:.02em;}
+@media(max-width:760px){.facts{grid-template-columns:1fr;}}
+
+/* ---------- Ficha técnica ---------- */
+details.tech{border:1px solid var(--line);background:var(--paper);margin-bottom:10px;}
+details.tech > summary{
+  cursor:pointer;list-style:none;padding:16px 20px;
+  font-weight:600;color:var(--navy);display:flex;justify-content:space-between;align-items:center;gap:16px;
+}
+details.tech > summary::-webkit-details-marker{display:none;}
+details.tech > summary::after{content:"+";color:var(--brass);font-size:20px;line-height:1;}
+details.tech[open] > summary::after{content:"–";}
+details.tech > summary:hover{background:var(--parchment-2);}
+.tech-body{padding:2px 20px 20px;}
+.tech-body ul{margin:0;padding-left:20px;}
+.tech-body li{margin-bottom:7px;}
+table{width:100%;border-collapse:collapse;margin-top:8px;font-size:14.5px;}
+thead th{
+  background:var(--navy);color:var(--paper);text-align:left;padding:9px 11px;
+  font-weight:600;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;
+}
+tbody td{border-bottom:1px solid var(--line);padding:9px 11px;vertical-align:top;}
+tbody tr:nth-child(even) td{background:var(--parchment);}
+td.ch{text-align:center;font-weight:600;color:var(--navy);width:44px;}
+td.note{color:var(--muted);font-style:italic;}
+.tablewrap{overflow-x:auto;}
+
+/* ---------- Contactos ---------- */
+.contact{background:var(--navy);color:var(--paper);}
+.contact .section{padding-top:64px;padding-bottom:64px;}
+.contact h2.title{color:var(--paper);}
+.contact .eyebrow{color:var(--brass-soft);}
+.contact .eyebrow::after{background:rgba(230,214,180,.28);}
+.contact a{color:var(--brass-soft);}
+.contact a:hover{color:#fff;}
+.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:8px;}
+@media(max-width:620px){.contact-grid{grid-template-columns:1fr;}}
+.contact .who{font-family:var(--display);font-size:25px;color:var(--paper);}
+.contact .role{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#a9bbd0;margin-bottom:4px;}
+.btn{
+  display:inline-block;margin-top:22px;padding:12px 26px;
+  border:1px solid var(--brass);color:var(--brass-soft);text-decoration:none;
+  font-size:13px;letter-spacing:.2em;text-transform:uppercase;
+}
+.btn:hover{background:var(--brass);color:var(--ink);}
+.terms{margin-top:30px;padding-top:22px;border-top:1px solid rgba(230,214,180,.24);font-size:15px;color:#cfd8e4;}
+
+/* ---------- Chamada para o dossier ---------- */
+.dossier{
+  margin-top:44px;border:1px solid var(--brass);background:var(--paper);
+  display:flex;align-items:center;gap:26px;padding:26px 28px;flex-wrap:wrap;
+  box-shadow:0 14px 30px -26px rgba(13,27,42,.55);
+}
+.dossier .txt{flex:1 1 300px;min-width:0;}
+.dossier .t{font-family:var(--display);font-size:27px;color:var(--navy);line-height:1.2;}
+.dossier .d{font-size:14.5px;color:var(--muted);margin-top:4px;}
+.dossier .go{
+  display:inline-block;padding:14px 30px;background:var(--navy);color:var(--paper);
+  text-decoration:none;font-size:13px;letter-spacing:.2em;text-transform:uppercase;
+  white-space:nowrap;border:1px solid var(--navy);
+}
+.dossier .go:hover{background:var(--brass);border-color:var(--brass);color:var(--ink);}
+
+/* ---------- Desenho de palco ---------- */
+.plot{margin-top:10px;border:1px solid var(--line);background:#fff;padding:10px;}
+.plot img{width:100%;height:auto;}
+.plot-note{font-size:13.5px;color:var(--muted);font-style:italic;margin-top:8px;}
+
+/* ---------- Telemóvel ---------- */
+@media(max-width:640px){
+  .topbar-in{padding:9px 16px;gap:12px;}
+  .brandmark{font-size:17px;letter-spacing:.24em;}
+  .topnav{gap:14px;flex-wrap:nowrap;}
+  .topnav a{font-size:12px;letter-spacing:.1em;white-space:nowrap;}
+  .hero{min-height:78vh;}
+  .hero-in{padding:0 18px 52px;}
+  .hero h1{letter-spacing:.1em;text-indent:.1em;}
+  .hero .place{letter-spacing:.24em;margin-bottom:18px;}
+  .section{padding:48px 18px;}
+  h2.title{font-size:clamp(28px,8vw,36px);}
+  .crew li{padding:18px 16px;}
+  .crew .name{font-size:23px;}
+  .facts li{padding:16px;}
+  .facts .v{font-size:21px;}
+  .dossier{padding:20px;gap:16px;}
+  .dossier .go{width:100%;text-align:center;}
+  details.tech > summary{padding:14px 15px;}
+  .tech-body{padding:2px 15px 16px;}
+  .repertoire li{font-size:15.5px;}
+  section[id],header[id]{scroll-margin-top:56px;}
+}
+
+footer.foot{background:var(--ink);color:#8fa0b4;text-align:center;padding:26px 22px;font-size:13px;letter-spacing:.08em;}
+footer.foot .anchor{font-size:15px;margin-right:8px;}
+
+/* ---------- Movimento ---------- */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.in{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .reveal{opacity:1;transform:none;transition:none;}
+}
+
+/* ---------- Impressão ---------- */
+@media print{
+  .topbar,.frame,.btn{display:none;}
+  body{background:#fff;}
+  .hero{min-height:auto;}
+  .section{padding:18px 0;}
+  details.tech{border:0;}
+  details.tech .tech-body{display:block;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="brandmark" href="#topo"><span>⚓</span>NAU</a>
+    <nav class="topnav">
+      <a href="#biografia">O projeto</a>
+      <a href="#grupo">O grupo</a>
+      <a href="#video">Vídeo</a>
+      <a href="#repertorio">Repertório</a>
+      <a href="#tecnica">Ficha técnica</a>
+      <a href="#contactos">Contactos</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero" id="topo">
+  <img class="hero-img" src="media/nau-cais.jpg" alt="Os quatro músicos do grupo NAU no cais de uma aldeia piscatória ao pôr do sol, com a sanfona, a viola braguesa, a viola e o tambor.">
+  <div class="hero-in">
+    <div class="anchor">⚓</div>
+    <h1>NAU</h1>
+    <p class="tagline">Cantigas do Mar</p>
+    <p class="place">Portugal</p>
+    <p class="lede">Quatro vozes, com sanfona, flauta, tambor, concertina e violas. Cantos de trabalho, romances da tradição oral e canções de autor nascidas à beira de água.</p>
+  </div>
+  <svg class="wave" viewBox="0 0 1200 42" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M0,20 C150,40 300,0 450,18 C600,36 750,4 900,20 C1050,36 1150,12 1200,18 L1200,42 L0,42 Z" fill="#f5efe3"/>
+  </svg>
+</header>
+
+<main>
+
+<section class="section reveal" id="biografia">
+  <p class="eyebrow">O projeto</p>
+  <h2 class="title">Instrumentos que podiam<br>ter ido a bordo.</h2>
+  <p class="lead">NAU canta o mar. Cantigas de trabalho, romances e canções nascidas a bordo, no cais e na praia — e toca-as com instrumentos que podiam ter feito a viagem: sanfona, flauta, tambor, concertina, viola e viola braguesa. Madeira, pele, corda e fole. Nada que precise de eletricidade para existir.</p>
+  <div class="cols">
+    <div>
+      <p>Antes de existirem motores, havia canto. Alar uma rede, puxar uma xávega, levantar ferro ou remar contra a corrente eram trabalhos que se faziam em conjunto e a compasso — e o compasso dava-o a voz. É deste chão que parte o grupo.</p>
+      <p>É um projeto raro. Há quem cante o mar e há quem toque instrumentos antigos, mas são poucos os que juntam as duas coisas com este critério: cada peça é procurada em recolhas, cancioneiros e gravações de terreno, e cada instrumento é escolhido pelo som que faria sentido naquele tempo e naquele lugar.</p>
+      <p>O repertório não se fecha numa só margem. Ao lado de cantigas de trabalho e romances da tradição oral portuguesa entram chamarritas açorianas, cantigas de barqueiros do Douro, canções de baleeiros e temas de autor ligados ao mar, incluindo versões em português de cantos marítimos de outras tradições europeias. O critério não é a origem: é o assunto. Água salgada, partida, trabalho, espera e regresso.</p>
+    </div>
+    <div>
+      <p>Os quatro músicos tocam com a sanfona, que dá o bordão contínuo a sustentar as vozes; a flauta, que abre e responde às frases cantadas; o tambor, que impõe ao conjunto a cadência de trabalho; a concertina, que puxa as partes mais rodadas; e a viola e a viola braguesa, que marcam o acompanhamento e a dança.</p>
+      <p>As quatro vozes cantam em conjunto na maior parte do alinhamento, com solos alternados e refrões abertos à participação do público. Não há música gravada, não há sequências: o que se ouve é o que está a acontecer à frente de quem escuta.</p>
+      <p>O grupo formou-se recentemente e apresentou-se publicamente pela primeira vez na Feira Pirata de Leça do Balio.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="grupo">
+  <p class="eyebrow">O grupo</p>
+  <h2 class="title">Quatro músicos, de pé, em semicírculo</h2>
+  <figure class="shot">
+    <img src="media/nau-grupo.jpg" alt="Os quatro músicos do grupo NAU em traje de mar, com a sanfona, a viola braguesa, a viola e o tambor.">
+    <figcaption>Feira Pirata de Leça do Balio</figcaption>
+  </figure>
+  <ul class="crew">
+    <li><div class="name">Rui Santos</div><div class="inst">Sanfona e voz</div></li>
+    <li><div class="name">Carlos Abrunheiro</div><div class="inst">Flauta, tambor e voz</div></li>
+    <li><div class="name">Alexandre Barros</div><div class="inst">Concertina, viola braguesa e voz</div></li>
+    <li><div class="name">João Madeira</div><div class="inst">Viola e voz</div></li>
+  </ul>
+  <ul class="facts">
+    <li><span class="k">Duração</span><span class="v">50–60 min<small>sem intervalo</small></span></li>
+    <li><span class="k">Formatos</span><span class="v">Palco<small>ou concerto de proximidade com som próprio</small></span></li>
+    <li><span class="k">Público</span><span class="v">Todas as idades<small>feiras, festivais, museus, festas de terra</small></span></li>
+  </ul>
+</section>
+
+<section class="section reveal" id="video">
+  <p class="eyebrow">Ver e ouvir</p>
+  <h2 class="title">Ao vivo</h2>
+  <div class="stage">
+    <div>
+      <div class="frame">
+        <video controls preload="metadata" playsinline poster="media/nau-video-poster.jpg">
+          <source src="media/nau-video.mp4" type="video/mp4">
+          O seu navegador não consegue reproduzir este vídeo.
+        </video>
+      </div>
+      <p class="caption">Feira Pirata de Leça do Balio</p>
+    </div>
+    <div>
+      <p>O alinhamento é construído como uma viagem: a partida do porto, o trabalho a bordo, a saudade de terra e o regresso. Entre cantigas, o grupo dá o contexto de cada peça — de onde vem, quem a cantava e para que servia — sem quebrar o fio do espetáculo.</p>
+      <p>Os quatro tocam de pé, em semicírculo, com ou sem palco, e com trajes de inspiração marítima. A disposição mantém o canto no centro e o público perto.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="repertorio">
+  <p class="eyebrow">Repertório</p>
+  <h2 class="title">O alinhamento</h2>
+  <ul class="repertoire">
+    <li>Baleeiros de New Bedford <span class="src">Zeca Medeiros</span></li>
+    <li>Hino dos Marinheiros <span class="src">sobre o Hino do Mineiro · música tradicional das Astúrias · letra de NAU</span></li>
+    <li>Cantiga de Levantar Ferro <span class="src">música de Francisco Pimenta / Maio Moço · letra anónima, possivelmente do séc. XVII</span></li>
+    <li>A Roupa do Marinheiro <span class="src">tradicional</span></li>
+    <li>Rema <span class="src">música tradicional da Galiza · letra de NAU</span></li>
+    <li>Ahoi! (Levai-me para o Mar) <span class="src">sobre Schipper, Ik Wil Varen · música tradicional dos Países Baixos · letra de NAU</span></li>
+    <li>Cantiga de Trabalho <span class="src">música de José Mário Branco · letra de João Lóio</span></li>
+    <li>Barco <span class="src">Falsete ou Canção dos Foliões das Festas do Espírito Santo, Açores · arranjo do GEFAC</span></li>
+    <li>Farol de Montedor <span class="src">tradicional</span></li>
+    <li>Chamarritas <span class="src">tradicional dos Açores · arranjo do GEFAC</span></li>
+  </ul>
+</section>
+
+<section class="section reveal" id="tecnica">
+  <p class="eyebrow">Ficha técnica</p>
+  <h2 class="title">O que o grupo precisa em palco</h2>
+  <p class="lead">Documento de trabalho. Qualquer ponto pode ser ajustado por acordo prévio.</p>
+
+  <details class="tech" open>
+    <summary>Palco e disposição</summary>
+    <div class="tech-body">
+      <ul>
+        <li>Quatro músicos, todos de pé, em semicírculo aberto para o público. Sem cadeiras nem praticáveis.</li>
+        <li>Da esquerda para a direita, na perspetiva de quem olha para o palco: Rui Santos (sanfona) · Carlos Abrunheiro (flauta, tambor) · Alexandre Barros (concertina, viola braguesa) · João Madeira (viola).</li>
+        <li>Área mínima de 5 m de frente por 4 m de fundo, plana, nivelada e estável.</li>
+        <li>Ao ar livre, cobertura obrigatória em caso de chuva ou de sol direto prolongado: os instrumentos são de madeira e a sanfona é muito sensível à humidade e ao calor.</li>
+        <li>Sem backline. Todos os instrumentos e as estantes de partituras são trazidos pelo grupo.</li>
+      </ul>
+      <h3 class="sub">Desenho de palco</h3>
+      <div class="plot">
+        <a href="media/nau-stage-plot.jpg"><img src="media/nau-stage-plot.jpg" alt="Desenho de palco do grupo NAU em vista de cima: quatro músicos em semicírculo, com microfones, estantes, monitores e tomadas assinalados."></a>
+      </div>
+      <p class="plot-note">Vista de cima. Clique para abrir em tamanho real e imprimir.</p>
+    </div>
+  </details>
+
+  <details class="tech">
+    <summary>Som</summary>
+    <div class="tech-body">
+      <h3 class="sub">Formato de proximidade</h3>
+      <ul>
+        <li>Para espaços pequenos e públicos até cerca de 150 pessoas, o grupo leva sistema de amplificação próprio.</li>
+        <li>Nesse caso, a organização assegura apenas um ponto de energia junto ao local de atuação.</li>
+      </ul>
+      <h3 class="sub">Com sistema da organização</h3>
+      <ul>
+        <li>Sistema P.A. profissional adequado à sala ou ao recinto, operado por técnico da organização.</li>
+        <li>Mesa com um mínimo de 12 canais, equalização de 3 bandas por canal e pelo menos 3 envios auxiliares.</li>
+        <li>Reverberação de sala (hall ou plate curto) para as vozes.</li>
+        <li>O conjunto é acústico: pede-se atenção ao ganho antes da realimentação.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="tech">
+    <summary>Lista de canais</summary>
+    <div class="tech-body">
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Ch</th><th>Fonte</th><th>Captação sugerida</th><th>Notas</th></tr></thead>
+          <tbody>
+            <tr><td class="ch">1</td><td>Voz — Rui Santos</td><td>Headset próprio ou SM58 com tripé</td><td class="note">Grupo traz headsets</td></tr>
+            <tr><td class="ch">2</td><td>Sanfona — Rui Santos</td><td>Condensador (SM81 / e614) ou DI</td><td class="note">Captação própria disponível</td></tr>
+            <tr><td class="ch">3</td><td>Voz — Carlos Abrunheiro</td><td>Headset próprio ou SM58 com tripé</td><td class="note">Voz principal em várias cantigas</td></tr>
+            <tr><td class="ch">4</td><td>Flauta — Carlos Abrunheiro</td><td>Condensador ou SM57</td><td class="note">Pé de microfone, canal próprio</td></tr>
+            <tr><td class="ch">5</td><td>Tambor — Carlos Abrunheiro</td><td>SM57 ou e604 com pinça</td><td class="note">Pousado no chão; sem tripé de bombo</td></tr>
+            <tr><td class="ch">6</td><td>Voz — Alexandre Barros</td><td>Headset próprio ou SM58 com tripé</td><td class="note"></td></tr>
+            <tr><td class="ch">7</td><td>Concertina — Alexandre Barros</td><td>Condensador ou par de clip mics</td><td class="note">Pé de microfone à altura do peito</td></tr>
+            <tr><td class="ch">8</td><td>Viola braguesa — Alexandre Barros</td><td>DI ou condensador</td><td class="note">Troca com a concertina durante o alinhamento</td></tr>
+            <tr><td class="ch">9</td><td>Voz — João Madeira</td><td>Headset próprio ou SM58 com tripé</td><td class="note"></td></tr>
+            <tr><td class="ch">10</td><td>Viola — João Madeira</td><td>DI (transdutor próprio) ou condensador</td><td class="note"></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:14px;color:var(--muted);font-style:italic;margin-top:12px">Dez canais ocupados: cada músico leva um canal de voz e um canal por instrumento. A numeração segue o palco, da esquerda para a direita.</p>
+    </div>
+  </details>
+
+  <details class="tech">
+    <summary>Monitorização, energia e luz</summary>
+    <div class="tech-body">
+      <ul>
+        <li>3 a 4 monitores de chão ao longo do semicírculo.</li>
+        <li>Mínimo de 2 misturas independentes; 3 é o desejável. Prioridade para as vozes, seguidas de sanfona e cordas.</li>
+        <li>2 tomadas de 220 V / 16 A no palco, com ligação à terra.</li>
+        <li>Iluminação frontal de tonalidade quente, uniforme sobre os quatro músicos, com luz suficiente para leitura das estantes.</li>
+        <li>Evitar projetores dirigidos diretamente aos olhos dos músicos.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="tech">
+    <summary>Tempos e acolhimento</summary>
+    <div class="tech-body">
+      <ul>
+        <li>Chegada e descarga 2h00 antes do início. Montagem 45 min. Passagem de som 30 min, concluída até 1h00 antes da abertura ao público. Desmontagem 30 min.</li>
+        <li>Camarim reservado e fechado à chave para 4 pessoas, com espelho, cadeiras e cabides — o grupo muda de roupa no local.</li>
+        <li>Água à temperatura ambiente para 4 pessoas, no camarim e em palco.</li>
+        <li>Um lugar de estacionamento reservado junto ao acesso de carga.</li>
+        <li>Local seco e vigiado para guardar os instrumentos antes e depois da atuação.</li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="dossier">
+    <div class="txt">
+      <div class="t">Dossier completo em PDF</div>
+      <div class="d">Biografia, espetáculo, repertório e rider técnico — 8 páginas, prontas a imprimir ou a reenviar.</div>
+    </div>
+    <a class="go" href="NAU-Dossier-Apresentacao.pdf" download>Descarregar</a>
+  </div>
+</section>
+
+</main>
+
+<section class="contact" id="contactos">
+  <div class="section">
+    <p class="eyebrow">Contactos</p>
+    <h2 class="title">Marcações</h2>
+    <div class="contact-grid">
+      <div>
+        <p class="role">Produção</p>
+        <p class="who">Carlos Abrunheiro</p>
+        <p><a href="mailto:cdanielabr@gmail.com">cdanielabr@gmail.com</a></p>
+      </div>
+      <div>
+        <p class="role">Produção</p>
+        <p class="who">Rui Santos</p>
+        <p><a href="mailto:rui77jazz@hotmail.com">rui77jazz@hotmail.com</a></p>
+      </div>
+    </div>
+    <p class="terms">Cachê sob consulta, com transportes incluídos. Refeições e alojamento acordados à parte.</p>
+    <a class="btn" href="mailto:cdanielabr@gmail.com?subject=Contacto%20NAU%20%C2%B7%20Cantigas%20do%20Mar">Pedir data</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <span class="anchor">⚓</span> NAU · Cantigas do Mar
+</footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+  els.forEach(function(el){ io.observe(el); });
+})();
+
+/* Ao imprimir ou guardar em PDF, abre todas as secções da ficha técnica. */
+window.addEventListener('beforeprint', function(){
+  document.querySelectorAll('details.tech').forEach(function(d){
+    if(!d.open){ d.open = true; d.dataset.autoOpen = '1'; }
+  });
+});
+window.addEventListener('afterprint', function(){
+  document.querySelectorAll('details.tech[data-auto-open]').forEach(function(d){
+    d.open = false; delete d.dataset.autoOpen;
+  });
+});
+</script>
+
+</body>
+</html>
